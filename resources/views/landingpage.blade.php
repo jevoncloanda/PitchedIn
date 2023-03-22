@@ -71,6 +71,8 @@
     </header>
     @endauth
 
+    <a type="submit" href="{{route('logout')}}">Logout</a>
+
     <script src="{{asset('js/navbar.js')}}"></script>
 </body>
 </html>
