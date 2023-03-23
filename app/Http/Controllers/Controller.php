@@ -10,8 +10,17 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public function getHomePage()
+    public function getLandingPage()
     {
         return view('landingpage');
+    }
+
+    public function getRegisterPage()
+    {
+        return view('signup');
+    }
+    public function getLoginPage()
+    {
+        return view('auth.login');
     }
 }

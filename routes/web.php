@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'getHomePage'])->name('getHomePage');
+Route::get('/', [Controller::class, 'getLandingPage'])->name('getLandingPage');
+
 
 Auth::routes();
+Route::get('/register', [Controller::class, 'getRegisterPage'])->name('getRegisterPage');
+
+Route::get('/login', [Controller::class, 'getLoginPage'])->name('getLoginPage');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
