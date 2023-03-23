@@ -74,7 +74,7 @@
                             <label for="country" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus>
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" autocomplete="country" autofocus>
                             </div>
                         </div>
 
@@ -82,7 +82,7 @@
                             <label for="state" class="col-md-4 col-form-label text-md-end">{{ __('State') }}</label>
 
                             <div class="col-md-6">
-                                <input id="state" type="text" class="form-control" name="state" value="{{ old('state') }}" required autocomplete="state" autofocus>
+                                <input id="state" type="text" class="form-control" name="state" value="{{ old('state') }}" autocomplete="state" autofocus>
                             </div>
                         </div>
 

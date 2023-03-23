@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('username');
             $table->string('fullname');
-            $table->string('country');
-            $table->string('state');
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
             $table->string('role');
             $table->string('bio')->nullable();
             $table->string('about')->nullable();
