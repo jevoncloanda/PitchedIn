@@ -37,13 +37,13 @@
 
             <p id="or">or</p>
 
-            <div class="ContinueWithGoogle-btn">
+            <a class="ContinueWithGoogle-btn" href="{{ url('redirect/google') }}">
                 <p>Continue with Google</p>
-            </div>
+            </a>
 
-            <div class="ContinueWithFacebook-btn">
+            <a class="ContinueWithFacebook-btn" href="{{ url('redirect/facebook') }}">
                 <p>Continue with Facebook</p>
-            </div>
+            </a>
             <!-- <img src="{{asset('asset/logo_pitchedin.png')}}" class="logo_pitchedin"/> -->
 
         </form>

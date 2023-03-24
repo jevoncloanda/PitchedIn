@@ -26,3 +26,7 @@ Route::get('/login', [Controller::class, 'getLoginPage'])->name('getLoginPage');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Social Logins
+Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);
+Route::get('{driver}/callback', [LoginController::class, 'handleProviderCallback']);

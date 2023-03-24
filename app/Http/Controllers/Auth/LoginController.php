@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -53,5 +55,42 @@ class LoginController extends Controller
     public function username()
     {
         return $this->username;
+    }
+
+    public function redirectToProvider($driver)
+    {
+        return Socialite::driver($driver)->redirect();
+    }
+
+    public function handleProviderCallback($driver)
+    {
+        try {
+            $user = Socialite::driver($driver)->user();
+        } catch (\Exception $e) {
+            return redirect()->route('getLoginPage');
+        }
+
+        $existingUser = User::where('email', $user->getEmail())->first();
+
+        if ($existingUser) {
+            auth()->login($existingUser, true);
+        } else {
+            $newUser                    = new User;
+            // $newUser->provider_name     = $driver;
+            // $newUser->provider_id       = $user->getId();
+            $newUser->fullname          = $user->getName();
+            $newUser->username          = $user->getName();
+            $newUser->email             = $user->getEmail();
+            $newUser->role              = 'Pitcher';
+            // we set email_verified_at because the user's email is already veridied by social login portal
+            $newUser->email_verified_at = now();
+            // you can also get avatar, so create avatar column in database it you want to save profile image
+            // $newUser->avatar            = $user->getAvatar();
+            $newUser->save();
+
+            auth()->login($newUser, true);
+        }
+
+        return redirect($this->redirectPath());
     }
 }
