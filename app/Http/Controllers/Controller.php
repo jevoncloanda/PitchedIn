@@ -21,6 +21,6 @@ class Controller extends BaseController
     }
     public function getLoginPage()
     {
-        return view('auth.login');
+        return view('login');
     }
 }

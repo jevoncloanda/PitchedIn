@@ -67,7 +67,7 @@
                 <br>
                 <p class="dropDown-konten-bold-p">Manage</p>
                 <p class="dropDown-konten-noBold-p">Saved Posts & Activity</p>
-                <p class="dropDown-konten-noBold-p">Sign Out</p>
+                <p class="dropDown-konten-noBold-p"><a href="{{route('logout')}}">Sign Out</a></p>
             </div>
         </div>
     </header>

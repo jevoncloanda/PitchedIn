@@ -8,10 +8,16 @@ let errorMessage = document.querySelector('.ErrorMessage');
 let email = document.getElementById('email');
 let username = document.getElementById('username');
 let password = document.getElementById('password');
+
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
 function validation(){
-    if(!(email.value.endsWith('.com')&&email.value.includes('@'))){
+    if(!validateEmail(email.value.trim())){
         errorMessage.style.display="flex";
-        errorMessage.innerText="Email Required";
+        errorMessage.innerText="Please enter a valid email";
         return false;
     }
     else if(username.value.trim()==""){
@@ -19,9 +25,9 @@ function validation(){
         errorMessage.innerText="Username Required";
         return false;
     }
-    else if(password.value.trim()==""){
+    else if(password.value.trim()=="" || password.value.trim().length < 8){
         errorMessage.style.display="flex";
-        errorMessage.innerText="Password Required";
+        errorMessage.innerText="Password must be at least 8 characters";
         return false;
     }
     else if(!checkbox.checked){
@@ -133,40 +139,12 @@ function validation2(){
 
 let register_form = document.getElementById('register-form')
 btn_detail.addEventListener('click',function(e){
-    // e.preventDefault();
-    if(validation2()){
-        // $('#register-form').submit();
-        // content_box.style.display="flex";
-        // content_box.style.pointerEvents="auto";
-        // detail_signup.style.display="none";
-        // detail_signup.style.pointerEvents="none";
-        // role.innerText="";
+    if(!validation2()){
+        e.preventDefault();
+    }
 
-        // email.setAttribute('value','');
-        // username.setAttribute('value','');
-        // password.setAttribute('value','');
-        // email.value=null;
-        // username.value=null;
-        // password.value=null;
-        // fullname.value=null;
-        // country.value=null;
-        // state.value=null;
-        // checkbox.checked=false;
-        // login_box.reset();
-        // detail_signup.reset();
-
-
-        if(role_dropdown_check%2==1){
-            role_dropdown_check+=1;
-            close_drop();
-        }
-
+    if(role_dropdown_check%2==1){
+        role_dropdown_check+=1;
+        close_drop();
     }
 });
-
-// $('#btn-detail-signup').click(function(e){
-//     if(!validation2())
-//         e.preventDefault();
-
-//     $('#form-register').submit();
-// });

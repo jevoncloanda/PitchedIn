@@ -1,0 +1,495 @@
+body{
+    width:100vw;
+    height:100vh;
+    padding-bottom:2%;
+}
+
+
+.content-box{
+    width:71%;
+    height:80%;
+    margin-left:14.5%;
+    margin-right:14.5%;
+    /* margin-bottom:100px; */
+
+}
+
+.login-box{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background: rgba(68, 114, 112, 0.08);
+    /* background:black; */
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+    width:100%;
+    height:100%;
+    margin-top:30px;
+
+    border-radius:50px;
+    margin-bottom:20px;
+
+
+}
+
+
+/* .login-pic{
+
+
+    width:45%;
+    height:100%;
+    min-height:100%;
+    object-fit:cover;
+}
+
+.login-pic img{
+    width:100%;
+    height:100%;
+    min-height:100%;
+    object-fit:cover;
+    border-top-left-radius:50px;
+    border-bottom-left-radius:50px;
+
+} */
+.login-pic-img{
+    /* width:45%; */
+    width:45%;
+    height:100%;
+    object-fit:contain;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-image:url('../asset/login-pict.png');
+
+    margin-left:0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.logo-pitchedin{
+    margin-left:5%;
+    margin-top:3%;
+    width:40%;
+    height:8%;
+}
+
+.quest-box{
+    display:flex;
+}
+
+.login-auth{
+    width:55%;
+    height:100%;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.login-auth-h1{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.login-auth h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 65px;
+    line-height: 84px;
+
+    color: #6C9493;
+
+}
+
+.login-auth hr{
+    width:100%;
+}
+
+
+
+.login-auth-username-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 90%;
+    height: 80px;
+    line-height: 84px;
+
+    background: #FFFFFF;
+    border-radius: 30px;
+    margin-top:2%;
+}
+
+.login-auth-username-box p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #C0C5C4;
+}
+
+.login-auth-password-box{
+    margin-top:2%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 90%;
+    height: 80px;
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.login-auth-password-box p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #C0C5C4;
+}
+
+.login-auth-username-box img{
+    width:30px;
+    height:30px;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.login-auth-username-box input{
+    border:none;
+    outline:none;
+    height:85%;
+    width:85%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.login-auth-password-box img{
+    width:30px;
+    height:30px;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.login-auth-password-box input{
+    border:none;
+    outline:none;
+    height:85%;
+    width:85%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.login-btn{
+    width:30%;
+    height:8%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border: none;
+    background: none;
+    outline: none;
+    border-radius:30px;
+    background: #DCBC13;
+    margin-top:1%;
+
+}
+
+.login-btn:hover{
+    cursor:pointer;
+}
+
+.login-btn p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size:25px;
+}
+
+#forgotPassword{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #6C9493;
+    margin-top:1.5%;
+
+}
+
+.errorMessage{
+    margin-top:2%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    color:red;
+    display:none;
+}
+
+#or{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #6C9493;
+}
+
+.ContinueWithGoogle-btn{
+    width: 70%;
+    height: 56px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: #FF8273;
+    border-radius: 30px;
+}
+
+.ContinueWithGoogle-btn:hover{
+    cursor:pointer;
+}
+
+.ContinueWithGoogle-btn p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.ContinueWithFacebook-btn{
+    width: 70%;
+    height: 56px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: #40648F;
+    border-radius: 30px;
+    margin-top:1%;
+}
+
+.ContinueWithFacebook-btn:hover{
+    cursor:pointer;
+
+}
+
+.ContinueWithFacebook-btn p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #FFFFFF;
+}
+
+.logo_pitchedin{
+    width:20%;
+    height:10%;
+    position:absolute;
+    left:0;
+    top:0;
+
+}
+
+.notif-box{
+    background-color:black;
+
+}
+
+.add-info{
+    text-align:right;
+    display:flex;
+    flex-direction:column;
+    font-size:125%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    justify-content:space-around;
+    color: #6C9493;
+}
+
+.sign-up-btn{
+    text-decoration:none;
+    color: #6C9493;
+    font-family: sans-serif;
+    text-decoration:underline;
+    font-weight:600px;
+
+}
+
+
+
+
+
+
+/*MODAL*/
+.modal{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background: rgba(0, 0, 0, 0.51);
+    opacity:0;
+    pointer-events: none;
+    transition :0.4s;
+}
+
+#modal_errorMessage{
+    color:red;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 20px;
+    margin-top:-12%;
+    display:none;
+}
+
+.modal-box-bottom{
+    display:none;
+    pointer-events:none;
+    margin-top:-12%;
+}
+
+.modal-box{
+    width:40%;
+    height:50%;
+    background-color:white;
+    margin-top:10%;
+    margin-left:29%;
+    border-radius:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:15px;
+    /* padding-top:30px;
+    padding-left:25px; */
+}
+
+.modal-box-up{
+    display:flex;
+    width:100%;
+}
+
+.modal-box-up-konten{
+    margin-top:30px;
+    margin-left:20px;
+    width:90%;
+}
+
+.modal-box-up-close{
+    padding:3px;
+}
+
+.modal-box-up-close img:hover{
+    cursor:pointer;
+}
+
+.model-box-up-konten-info-group{
+    margin-top:20px;
+}
+
+.model-box-up-konten-info{
+    font-family: 'Montserrat';
+    font-style:normal;
+    font-weight: 400;
+    font-size:15px;
+
+}
+
+.modal-first-h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 30px;
+
+    color: #203D3B;
+}
+
+.modal-second-h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 30px;
+
+    color: #6C9493;
+}
+
+.enter-email-box{
+    font-family: 'Montserrat';
+    font-style: normal;
+    background-color: #6C9493;
+    display:flex;
+    border-radius:30px;
+    width:95%;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    padding:5px;
+    margin-bottom:15%;
+}
+
+.enter-email-box input::placeholder{
+    color:white;
+    font-weight:100;
+}
+
+.enter-email-text{
+    border: none;
+    background: none;
+    outline: none;
+    width:90%;
+    font-size:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    margin-left:3%;
+}
+
+.enter-email-btn{
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.enter-email-btn:hover{
+    cursor:pointer;
+}
+
+.resend-link{
+    display:flex;
+    font-family: 'Montserrat';
+    font-style: normal;
+    justify-content:center;
+    align-items:center;
+}
+
+.resend-link-black{
+    color:black;
+    cursor: default;
+}
+
+.resend-link-green{
+    color:#6C9493;
+}
+

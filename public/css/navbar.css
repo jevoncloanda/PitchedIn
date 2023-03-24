@@ -159,3 +159,8 @@ Ini dijalankan kalau sudah Login
     font-size:12px;
     line-height:20px;
 }
+
+.dropDown-konten-noBold-p a{
+    text-decoration: none;
+    color: white;
+}
