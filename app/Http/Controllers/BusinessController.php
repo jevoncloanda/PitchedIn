@@ -2,26 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Business;
 use Illuminate\Http\Request;
 
 class BusinessController extends Controller
 {
-    // public function getCreateStudent()
-    // {
-    //     return view('create');
-    // }
+    public function getCreateBusiness()
+    {
+        return view('create.create');
+    }
 
-    // public function createStudent(StudentRequest $request)
-    // {
-    //     Student::create([
-    //         'name' => $request->name,
-    //         'NIM' => $request->NIM,
-    //         'birth' => $request->birth,
-    //         'age' => $request->age,
-    //         'class' => $request->class,
-    //     ]);
-    //     return redirect(route('getStudents'));
-    // }
+    public function createBusiness(Request $request)
+    {
+        $image = NULL;
+        $attachment = NULL;
+
+        if($request->file('image'))
+        {
+            $image = $request->file('image')->store('business-images');
+        }
+
+        if($request->file('attachment'))
+        {
+            $attachment = $request->file('attachment')->store('business-attachment');
+        }
+
+        Business::create([
+            'fullname' => $request->fullname,
+            'business_name' => $request->business_name,
+            'type1' => $request->type1,
+            'type2' => $request->type2,
+            'caption' => $request->caption,
+            'image' => $image,
+            'attachment' => $attachment
+        ]);
+        return redirect(route('getLandingPage'));
+    }
 
     // public function getStudents()
     // {

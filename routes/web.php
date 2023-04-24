@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\TipsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +28,12 @@ Route::get('/login', [Controller::class, 'getLoginPage'])->name('getLoginPage');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/create/business', [BusinessController::class, 'getCreateBusiness'])->name('getCreateBusiness');
+Route::post('/create/business', [BusinessController::class, 'createBusiness'])->name('createBusiness');
+
+Route::get('/create/tips', [TipsController::class, 'getCreateTips'])->name('getCreateTips');
+Route::post('/create/tips', [TipsController::class, 'createTips'])->name('createTips');
 
 // Social Logins
 Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);
