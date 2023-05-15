@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tips;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TipsController extends Controller
 {
@@ -14,6 +15,7 @@ class TipsController extends Controller
 
     public function createTips(Request $request)
     {
+        $user = Auth::user();
         $image = NULL;
         if($request->file('image'))
         {
@@ -23,7 +25,8 @@ class TipsController extends Controller
         Tips::create([
             'caption' => $request->caption,
             'tag' => $request->tag,
-            'image' => $image
+            'image' => $image,
+            'user_id' => $user->id
         ]);
         return redirect(route('getLandingPage'));
     }

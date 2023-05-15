@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Business;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BusinessController extends Controller
 {
@@ -14,6 +15,7 @@ class BusinessController extends Controller
 
     public function createBusiness(Request $request)
     {
+        $user = Auth::user();
         $image = NULL;
         $attachment = NULL;
 
@@ -34,7 +36,8 @@ class BusinessController extends Controller
             'type2' => $request->type2,
             'caption' => $request->caption,
             'image' => $image,
-            'attachment' => $attachment
+            'attachment' => $attachment,
+            'user_id' => $user->id
         ]);
         return redirect(route('getLandingPage'));
     }

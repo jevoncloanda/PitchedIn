@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('caption');
             $table->string('image')->nullable();
             $table->string('attachment')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
