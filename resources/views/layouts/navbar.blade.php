@@ -17,8 +17,8 @@
 
         <div id="nav-group">
             <a href="#" class="nav">Explore</a>
-            <a href="{{route('getCreateBusiness')}}" class="nav">Create</a>
-            <a href="#" class="nav">Forum</a>
+            {{-- <a href="{{route('getCreateBusiness')}}" class="nav">Create</a> --}}
+            <a href="{{route('getForumPage')}}" class="nav">Forum</a>
             <a href="#" class="nav">Tips</a>
         </div>
 
@@ -41,7 +41,7 @@
         <div id="nav-group">
             <a href="#" class="nav">Explore</a>
             <a href="{{route('getCreateBusiness')}}" class="nav">Create</a>
-            <a href="#" class="nav">Forum</a>
+            <a href="{{route('getForumPage')}}" class="nav">Forum</a>
             <a href="#" class="nav">Tips</a>
         </div>
 

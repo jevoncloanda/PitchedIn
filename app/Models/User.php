@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tips::class);
     }
+
+    public function forums() : HasMany
+    {
+        return $this->hasMany(Forum::class);
+    }
 }

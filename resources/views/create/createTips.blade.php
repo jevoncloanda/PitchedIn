@@ -56,10 +56,10 @@
                     <img src="{{asset('asset/steven.png')}}" class="profile-picture"/>
                     -->
                     <div class="profile-picture">
-                        <img src="{{asset('asset/steven.png')}}"/>
+                        <img src="{{asset('asset/anonymous.png')}}"/>
                     </div>
                     <div class="tips-preview-content-header-profile-name">
-                        <h3>Steven Nathaniel</h3>
+                        <h3>{{$user->fullname}}</h3>
                         <br/>
                         <p>Posted..ago</p>
                     </div>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="tips-preview-logo">
-                <p class="preview-bottom-name">Steven Nathaniel</p>
+                <p class="preview-bottom-name">{{$user->fullname}}</p>
                 <img src="{{asset('asset/heart-noLike.png')}}" id="heart-btn"/>
                 <img src="{{asset('asset/comment-logo.png')}}"/>
                 <img src="{{asset('asset/save-logo.png')}}" id="saved-logo"/>

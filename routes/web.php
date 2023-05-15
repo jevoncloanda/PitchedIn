@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\TipsController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,19 +23,22 @@ Route::get('/', [Controller::class, 'getLandingPage'])->name('getLandingPage');
 
 Auth::routes();
 Route::get('/register', [Controller::class, 'getRegisterPage'])->name('getRegisterPage');
-
 Route::get('/login', [Controller::class, 'getLoginPage'])->name('getLoginPage');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Create Business Page
 Route::get('/create/business', [BusinessController::class, 'getCreateBusiness'])->name('getCreateBusiness');
 Route::post('/create/business', [BusinessController::class, 'createBusiness'])->name('createBusiness');
 
+// Create Tips Page
 Route::get('/create/tips', [TipsController::class, 'getCreateTips'])->name('getCreateTips');
 Route::post('/create/tips', [TipsController::class, 'createTips'])->name('createTips');
 
+// Forum Page
+Route::get('/forum', [ForumController::class, 'getForumPage'])->name('getForumPage');
+Route::post('/forum', [ForumController::class, 'createForum'])->name('createForum');
 // Social Logins
 Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);
 Route::get('{driver}/callback', [LoginController::class, 'handleProviderCallback']);

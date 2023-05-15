@@ -10,7 +10,8 @@ class TipsController extends Controller
 {
     public function getCreateTips()
     {
-        return view('create.createTips');
+        $user = Auth::user();
+        return view('create.createTips', compact('user'));
     }
 
     public function createTips(Request $request)
