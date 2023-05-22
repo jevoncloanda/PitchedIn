@@ -17,7 +17,7 @@
 
                     <div class="login-auth-email-box">
                         <img src="{{asset('asset/email-logo.png')}}"  />
-                        <input type="email" id="email" name="email" placeholder="Enter your email"/>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" value="{{$email}}"/>
                     </div>
 
                     <div class="login-auth-username-box">

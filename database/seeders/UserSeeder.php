@@ -15,9 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create('id_ID');
         DB::table('users')->insert([
             'email' => 'admin@gmail.com',
             'username' => 'Admin',
+            // 'avatar' => $faker->image(),
             'fullname' => 'Admin',
             'country' => 'Indonesia',
             'state' => 'Jawa Barat',
@@ -27,17 +29,17 @@ class UserSeeder extends Seeder
             'password' => Hash::make('admin1234'),
         ]);
 
-        $faker = Faker::create('id_ID');
-
+        $roles = ['Pitcher', 'Investor'];
         for($i = 1; $i <= 20; $i++)
         {
             DB::table('users')->insert([
                 'email' => $faker->email(),
                 'username' => $faker->userName(),
+                // 'avatar' => $faker->image(),
                 'fullname' => $faker->name(),
                 'country' => $faker->country(),
                 'state' => $faker->city(),
-                'role' => 'User',
+                'role' => $roles[$faker->numberBetween(0,1)],
                 'bio' => $faker->text(),
                 'about' => $faker->text(),
                 'password' => Hash::make('user1234'),
