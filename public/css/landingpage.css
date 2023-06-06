@@ -11,44 +11,6 @@
 
 /*NAVBAR*/
 
-header{
-    height:70px;
-    width:100%;
-    position:fixed;
-    z-index:10;
-}
-
-.nav{
-    font-size:16px;
-}
-
-.pp-circle{
-    height:50px;
-    width:50px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.pp-circle img{
-    height:48.5px;
-    width:48.5px;
-}
-
-#hi-p{
-    font-size:16px;
-}
-
-#name-p{
-    font-size:16px;
-}
-
-#dropDown-circle{
-    height:18px;
-    width:18px;
-    background:white;
-}
-
 
 
 
@@ -162,7 +124,6 @@ LANDING PAGE
     font-weight: 600;
     font-size: 12px;
     text-decoration:none;
-    cursor: pointer;
 }
 
 .foot_landing_page1{
@@ -260,7 +221,7 @@ DISCOVER*/
 .landing_page_view_2{
     width:100vw;
     height:90vh;
-    background-image:url("../asset/lp2_background.png");
+    background-image:url("../Asset/lp2_background.png");
     background-size:cover;
     display:flex;
     justify-content:center;
@@ -661,7 +622,7 @@ STORIES
     display:flex;
     align-items:center;
     justify-content:center;
-    background-image:url("../asset/stories_bg.png");
+    background-image:url("../Asset/stories_bg.png");
     background-size:cover;
     flex-direction:column;
 }

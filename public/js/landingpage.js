@@ -1,10 +1,16 @@
 /*Javascript
-untuk
 LandingPage View 1 */
 let future = document.querySelector('.future');
+let toggle_future = 0;
 setInterval(function(e){
-    future.innerHTML="Success?";
-},3000);
+    if(toggle_future%2==0){
+        future.innertText="Success?";
+    }
+    else{
+        future.innerText="Future?";
+    }
+    toggle_future = toggle_future + 1;
+},100);
 
 
 /*Javascript

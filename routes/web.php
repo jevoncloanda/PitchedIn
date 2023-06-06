@@ -39,6 +39,11 @@ Route::post('/create/tips', [TipsController::class, 'createTips'])->name('create
 // Forum Page
 Route::get('/forum', [ForumController::class, 'getForumPage'])->name('getForumPage');
 Route::post('/forum', [ForumController::class, 'createForum'])->name('createForum');
+
+// Explore
+Route::get('/explore', [BusinessController::class, 'getBusinesses'])->name('getBusinesses');
+Route::get('/search', [BusinessController::class, 'searchBusinesses'])->name('searchBusinesses');
+
 // Social Logins
 Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);
 Route::get('{driver}/callback', [LoginController::class, 'handleProviderCallback']);

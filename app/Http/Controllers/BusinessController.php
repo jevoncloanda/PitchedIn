@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,11 +43,25 @@ class BusinessController extends Controller
         return redirect(route('getLandingPage'));
     }
 
-    // public function getStudents()
-    // {
-    //     $students = Student::all();
-    //     return view('view', ['studentz' => $students]);
-    // }
+    public function getBusinesses()
+    {
+        $businesses = Business::all();
+        $users = User::all();
+        return view('explore', compact('businesses', 'users'));
+    }
+
+    public function searchBusinesses()
+    {
+        $search_text = $_GET['query'];
+        $users = User::all();
+        $businesses = Business::where('business_name', 'LIKE', '%' . $search_text . '%')
+        ->orWhere('fullname', 'LIKE', '%' . $search_text . '%')
+        ->orWhere('type1', 'LIKE', '%' . $search_text . '%')
+        ->orWhere('type2', 'LIKE', '%' . $search_text . '%')
+        ->orWhere('caption', 'LIKE', '%' . $search_text . '%')->get();
+
+        return view('explore', compact('businesses', 'users'));
+    }
 
     // public function getStudentById($id)
     // {
@@ -76,13 +91,5 @@ class BusinessController extends Controller
     // public function getHomePage()
     // {
     //     return view('welcome2');
-    // }
-
-    // public function searchStudents()
-    // {
-    //     $search_text = $_GET['query'];
-    //     $students = Student::where('name', 'LIKE', '%' . $search_text . '%')->orWhere('NIM', 'LIKE', '%' . $search_text . '%')->get();
-
-    //     return view('search', ['studentz' => $students]);
     // }
 }

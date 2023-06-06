@@ -79,7 +79,7 @@ class LoginController extends Controller
             // $newUser->provider_name     = $driver;
             // $newUser->provider_id       = $user->getId();
             $newUser->fullname          = $user->getName();
-            $newUser->username          = $user->getName();
+            $newUser->username          = strtok($user->getName(), " ");
             $newUser->email             = $user->getEmail();
             $newUser->role              = 'Pitcher';
             // we set email_verified_at because the user's email is already veridied by social login portal

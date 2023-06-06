@@ -4,19 +4,55 @@
     box-sizing:border-box;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+body{
+    position:relative;
+}
+
+
 header{
     display:flex;
     justify-content:space-between;
     align-items:center;
     background-color: #203D3B;
     width:100%;
-    height:100px;
+    /* height:100px; */
+    height:10%;
+    height: 111px;
+
+    padding:10px;
+    z-index: 2;
+}
+
+.menu_responsive{
+    height:22px;
+    width:auto;
+    display:none;
+    pointer-events:none;
 }
 
 #logo{
     width: 200px;
     height: 40px;
-    margin-left:20px;
+    /*
+    margin-left:15px;*/
+}
+
+.logo_group{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+    margin-left:10px;
 }
 
 #nav-group{
@@ -47,8 +83,8 @@ Ini dijalankan kalau belum LogIn
 
 
 .auth{
-    width:124px;
-    height:49px;
+    width:90px;
+    height:35px;
     background-color:white;
     border-radius:30px;
     margin-right:20px;
@@ -65,7 +101,7 @@ Ini dijalankan kalau belum LogIn
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size:22px;
+    font-size:17px;
       /* color:#203D3B;
     font-family: 'Montserrat';
     font-style: normal;
@@ -96,9 +132,14 @@ Ini dijalankan kalau sudah Login
 }
 
 .pp-img{
-    width:77.6px;
-    height:77.6px;
+    margin-left:1%;
+    margin-right:1%;
+    margin-top:1%;
+    margin-bottom:1%;
+    width: 98%;
+    height:98%;
     border-radius:50%;
+
 }
 
 #hi-p{
@@ -116,6 +157,10 @@ Ini dijalankan kalau sudah Login
     font-weight: 600;
     font-size:22px;
     margin-right:25px;
+}
+
+#dropDown-circle:hover{
+    cursor: pointer;
 }
 
 #dropDown-circle{
@@ -163,4 +208,193 @@ Ini dijalankan kalau sudah Login
 .dropDown-konten-noBold-p a{
     text-decoration: none;
     color: white;
+}
+
+header{
+    height:70px;
+    width:100%;
+    z-index:10;
+}
+
+.nav{
+    font-size:16px;
+}
+
+.pp-circle{
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.pp-circle img{
+    height:48.5px;
+    width:48.5px;
+}
+
+#hi-p{
+    font-size:16px;
+}
+
+#name-p{
+    font-size:16px;
+}
+
+#dropDown-circle{
+    height:18px;
+    width:18px;
+    background:white;
+}
+
+.responsive_menu{
+    width:100vw;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.51);
+    position:absolute;
+    z-index:999;
+    display:flex;
+    opacity:0;
+    pointer-events:none;
+    transition:0.4s;
+    top:0;
+    left:0;
+}
+
+.responsive_menu_content{
+    position: absolute;
+    width: 165px;
+    height: 260px;
+    height:300px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-between;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    z-index:1000;
+}
+
+.responsive_menu_content{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333333;
+}
+
+.explore_menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+}
+
+.create_menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+}
+
+.forum_menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+}
+
+.tips_menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+}
+
+.signUp_menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+}
+
+.logIn_menu{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+}
+
+.menu_logo{
+    width:25px;
+    height:25px;
+    margin-right:10px;
+}
+
+.menu_text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #333333;
+}
+
+.menu_back_symbol{
+    width:20px;
+    height:20px;
+}
+
+@media (max-width:768px){
+    .menu_responsive{
+        display:flex;
+        pointer-events:auto;
+        cursor:pointer;
+    }
+
+    #logo{
+        margin-left:15px;
+    }
+
+    #nav-group{
+        display:none;
+        pointer-events:none;
+    }
+
+    #hi-p{
+        display:none;
+    }
+
+    #name-p{
+        display:none;
+    }
+
+    #dropDown-circle{
+        display:none;
+    }
+
+    #auth-group{
+        display:none;
+        pointer-events:none;
+    }
+
+    .dropDown-konten-group{
+        height:180px;
+        width:160px;
+        margin-right:150px;
+        margin-top:240px;
+    }
 }
