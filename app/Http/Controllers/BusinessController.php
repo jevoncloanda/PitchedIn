@@ -6,6 +6,7 @@ use App\Models\Business;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class BusinessController extends Controller
 {
@@ -40,14 +41,21 @@ class BusinessController extends Controller
             'attachment' => $attachment,
             'user_id' => $user->id
         ]);
-        return redirect(route('getLandingPage'));
+        return redirect(route('getBusinesses'));
     }
 
     public function getBusinesses()
     {
         $businesses = Business::all();
+        $sorted_biz = $businesses->sortByDesc('created_at');
         $users = User::all();
-        return view('explore', compact('businesses', 'users'));
+        return view('explore', compact('sorted_biz', 'users'));
+    }
+
+    public function getBusinessById($id)
+    {
+        $business = Business::find($id);
+        return view('exploreById', compact('business'));
     }
 
     public function searchBusinesses()
@@ -60,7 +68,16 @@ class BusinessController extends Controller
         ->orWhere('type2', 'LIKE', '%' . $search_text . '%')
         ->orWhere('caption', 'LIKE', '%' . $search_text . '%')->get();
 
-        return view('explore', compact('businesses', 'users'));
+        $sorted_biz = $businesses->sortByDesc('created_at');
+
+        return view('explore', compact('sorted_biz', 'users'));
+    }
+
+    public function downloadAttachmentById($id)
+    {
+        $business = Business::find($id);
+        $file = public_path() . '/storage/' . $business->attachment ;
+        return response()->download($file);
     }
 
     // public function getStudentById($id)

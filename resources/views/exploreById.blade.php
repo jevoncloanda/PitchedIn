@@ -1,20 +1,17 @@
 <link rel="stylesheet" href="{{asset('css/explore.css')}}"/>
 @extends('layouts.navbar')
 @section('content')
-<div class="explore_page2">
-    <div class="explore_page2_left">
-        <form class="search_bar" action="{{route('searchBusinesses')}}">
-            <!--
-            <img src="{{asset('asset/kaca_pembesar.png')}}"/>
-            <input type="text" placeholder="Search here"/>
-            -->
-            <div class="search_bar_inside">
-                <img src="{{asset('asset/kaca_pembesar.png')}}"/>
-                <input name="query" type="text" placeholder="Search here"/>
-            </div>
-        </form>
-        @foreach ($sorted_biz as $business)
-        <div class="postingan_explore2">
+<div class="back">
+    <div class="back_content">
+        <a href="{{route('getBusinesses')}}">
+            <img src="{{asset('asset/explore_back.png')}}" class="back_btn"/>
+        </a>
+    </div>
+</div>
+
+<div class="explore_page1">
+    <div class="explore_left">
+        <div class="user_profile1">
             <div class="color_circle_pp">
                 <div class="white_circle_pp">
                     <img src="{{asset('asset/anonymous.png')}}"/>
@@ -25,80 +22,20 @@
                     </div>
                 </div>
             </div>
-            <div class="postingan_explore2_content">
-                <div class="explore_right_head">
-                    <div class="explore_head_data">
-                        <h2>{{$business->fullname}}</h2>
-                        <h3>{{$business->business_name}}</h3>
-                        <?php
-                            $post_time = now()->diffInHours($business->created_at);
-                            $post_time_str = $post_time . ' hours';
-                            if($post_time == 0)
-                            {
-                                $post_time = now()->diffInMinutes($business->created_at);
-                                $post_time_str = $post_time . ' minutes';
-                            }
-                            if($post_time == 0)
-                            {
-                                $post_time = now()->diffInSeconds($business->created_at);
-                                $post_time_str = $post_time . ' seconds';
-                            }
-                        ?>
-                        <p>Posted <b>{{$post_time_str}}</b> ago</p>
-                    </div>
-                    <div class="explore_head_tag">
-                        <div class="first_tag">
-                            {{$business->type1}}
-                        </div>
-                        <div class="second_tag">
-                            {{$business->type2}}
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <p>{{$business->caption}}</p>
-                @if ($business->image)
-                <img src="{{url('storage/' . $business->image)}}" alt="" title=""/>
-                @endif
-                <div class="see_more">
-                    <a href="{{route('getBusinessById', ['id' => $business->id])}}">See More</a>
-                </div>
+            <div class="user_data">
+                <h3>{{$business->user->fullname}}</h3>
+                <p>{{$business->user->state . ', ' . $business->user->country}}</p>
             </div>
-        </div>
-        @endforeach
-    </div>
+            <p>{{$business->user->bio}}</p>
 
-    <div class="explore_page2_right">
-        <div class="suggestions">
-            Suggestions
-        </div>
-        <div class="user_reccomendations">
-            @foreach ($users as $user)
-            <div class="reccomendation">
-                <div class="color_circle_pp">
-                    <div class="white_circle_pp">
-                        <img src="{{asset('asset/anonymous.png')}}"/>
-                    </div>
+            <div class="connect_and_chat">
+                <div class="connect">
+                    View Profile
                 </div>
-                <div class="reccomendation_data">
-                    <div class="reccomendation_name">
-                        <h2>{{$user->fullname}}</h2>
-                        <p>{{$user->state . ', ' . $user->country}}</p>
-                        <p>{{$user->email}}</p>
-                    </div>
-                    <div class="connect_and_chat">
-                        <div class="connect">
-                            Connect
-                        </div>
-                        <img src="{{asset('asset/chat_logo.png')}}"/>
-                    </div>
-                </div>
+                <img src="{{asset('asset/chat_logo.png')}}"/>
             </div>
-            <br>
-            <br>
-            <hr>
-            @endforeach
         </div>
+
         <div class="bottom_explore_left">
             <ul>
                 Contact Us
@@ -115,34 +52,82 @@
                 &#169;&nbsp;Copyright 2023 PitchedIn.
             </ul>
         </div>
+
     </div>
-
-
-    <div class="message">
-
-        <div class="message_data">
-            <div class="color_pp_message">
-                <div class="white_pp_message">
-                    <img src="{{asset('asset/Dummy_Profile_Picture.png')}}"/>
-                </div>
-
-                <div class="message_pp_online_status">
-                    <div class="message_pp_online_green">
-
-                    </div>
-                </div>
-
+    <div class="explore_right">
+        <div class="explore_right_head">
+            <div class="explore_head_data">
+                <h2>{{$business->fullname}}</h2>
+                <h3>{{$business->business_name}}</h3>
+                <?php
+                    $post_time = now()->diffInHours($business->created_at);
+                    $post_time_str = $post_time . ' hours';
+                    if($post_time == 0)
+                    {
+                        $post_time = now()->diffInMinutes($business->created_at);
+                        $post_time_str = $post_time . ' minutes';
+                    }
+                    if($post_time == 0)
+                    {
+                        $post_time = now()->diffInSeconds($business->created_at);
+                        $post_time_str = $post_time . ' seconds';
+                    }
+                ?>
+                <p>Posted <b>{{$post_time_str}}</b> ago</p>
             </div>
-            <h3>Messaging</h3>
-            <div class="message_menu">
-                <img src="{{asset('asset/three-dot.png')}}" id="menu_three"/>
-                <img src="{{asset('asset/edit_logo.png')}}" id="menu_edit"/>
-                <img src="{{asset('asset/up_menu.png')}}" id="menu_up"/>
+            <div class="explore_head_tag">
+                <div class="first_tag">
+                    {{$business->type1}}
+                </div>
+                <div class="second_tag">
+                    {{$business->type2}}
+                </div>
             </div>
         </div>
+        <hr>
+        <p>{{$business->caption}}<br></p>
+        <br>
+        @if ($business->image)
+        <img src="{{url('storage/' . $business->image)}}" alt="" title=""/>
+        @endif
+        <br>
+        <br>
+        @if ($business->attachment)
+        <a href="{{route('downloadAttachmentById', ['id' => $business->id])}}" class="bottom_content">
+            <div class="pdf">
+                <img src="{{asset('asset/logo-download-pdf.png')}}"/>
+                <p>Attachment(s)</p>
+            </div>
+        </a>
+        @endif
     </div>
+</div>
+<br/>
+<br/>
+<br/>
 
-    <div class="message_up">
+<div class="message">
+    <div class="message_data">
+        <div class="color_pp_message">
+            <div class="white_pp_message">
+                <img src="{{asset('asset/Dummy_Profile_Picture.png')}}"/>
+            </div>
+            <div class="message_pp_online_status">
+                <div class="message_pp_online_green">
+
+                </div>
+            </div>
+        </div>
+        <h3>Messaging</h3>
+        <div class="message_menu">
+            <img src="{{asset('asset/three-dot.png')}}"/>
+            <img src="{{asset('asset/edit_logo.png')}}"/>
+            <img src="{{asset('asset/up_menu.png')}}" id="menu_up"/>
+        </div>
+    </div>
+</div>
+
+<div class="message_up">
         <div class="message_data">
             <div class="color_pp_message">
                 <div class="white_pp_message">
@@ -156,18 +141,15 @@
             </div>
             <h3>Messaging</h3>
             <div class="message_menu">
-                <img src="{{asset('asset/three-dot.png')}}" id="menu_three"/>
-                <img src="{{asset('asset/edit_logo.png')}}" id="menu_edit"/>
+                <img src="{{asset('asset/three-dot.png')}}"/>
+                <img src="{{asset('asset/edit_logo.png')}}"/>
                 <img src="{{asset('asset/down_menu.png')}}" id="menu_down"/>
             </div>
         </div>
         <div class="message_search_form">
-
             <form class="message_search_bar">
-
                 <img src="{{asset('asset/kaca_pembesar.png')}}"/>
                 <input type="text" placeholder="Search here"/>
-
             </form>
             <img src="{{asset('asset/sort_logo.png')}}"/>
         </div>
@@ -317,7 +299,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <script src="{{asset('js/explore.js')}}"></script>

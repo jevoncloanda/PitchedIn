@@ -42,7 +42,13 @@ Route::post('/forum', [ForumController::class, 'createForum'])->name('createForu
 
 // Explore
 Route::get('/explore', [BusinessController::class, 'getBusinesses'])->name('getBusinesses');
-Route::get('/search', [BusinessController::class, 'searchBusinesses'])->name('searchBusinesses');
+Route::get('/explore/{id}', [BusinessController::class, 'getBusinessById'])->name('getBusinessById');
+Route::get('/search-business', [BusinessController::class, 'searchBusinesses'])->name('searchBusinesses');
+Route::get('/download-attachment/{id}', [BusinessController::class, 'downloadAttachmentById'])->name('downloadAttachmentById');
+
+// Tips
+Route::get('/tips', [TipsController::class, 'getTips'])->name('getTips');
+Route::get('/search-tips', [TipsController::class, 'searchTips'])->name('searchTips');
 
 // Social Logins
 Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);

@@ -21,7 +21,7 @@
             <a href="{{route('getBusinesses')}}" class="nav">Explore</a>
             {{-- <a href="{{route('getCreateBusiness')}}" class="nav">Create</a> --}}
             <a href="{{route('getForumPage')}}" class="nav">Forum</a>
-            <a href="#" class="nav">Tips</a>
+            {{-- <a href="#" class="nav">Tips</a> --}}
         </div>
 
         <div id="auth-group">
@@ -45,13 +45,13 @@
             <a href="{{route('getBusinesses')}}" class="nav">Explore</a>
             <a href="{{route('getCreateBusiness')}}" class="nav">Create</a>
             <a href="{{route('getForumPage')}}" class="nav">Forum</a>
-            <a href="#" class="nav">Tips</a>
+            <a href="{{route('getTips')}}" class="nav">Tips</a>
         </div>
 
 
         <div id="pp_welcome_dropdown">
             <a href="#" class="pp-circle">
-                <img src="{{asset('asset/Dummy_Profile_Picture.png')}}" class="pp-img">
+                <img src="{{asset('asset/anonymous.png')}}" class="pp-img">
             </a>
             <?php
                 $username = Auth::user()->username;
