@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -27,8 +28,32 @@ class Controller extends BaseController
 
         return view('signup', compact('email'));
     }
+
     public function getLoginPage()
     {
         return view('login');
+    }
+
+    public function getProfile($id)
+    {
+        $users = User::all();
+        $profile = User::find($id);
+        return view('profile', compact('users', 'profile'));
+    }
+
+    public function updateAbout(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        $user->update([
+            'about' => $request->about
+        ]);
+        return redirect(route('getProfile', ['id' => $id]));
+    }
+
+    public function getPostActivity($id)
+    {
+        $profile = User::find($id);
+        return view('postactivity', compact('profile'));
     }
 }

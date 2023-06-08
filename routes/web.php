@@ -50,6 +50,11 @@ Route::get('/download-attachment/{id}', [BusinessController::class, 'downloadAtt
 Route::get('/tips', [TipsController::class, 'getTips'])->name('getTips');
 Route::get('/search-tips', [TipsController::class, 'searchTips'])->name('searchTips');
 
+// Profile
+Route::get('/profile/{id}', [Controller::class, 'getProfile'])->name('getProfile');
+Route::patch('/profile/{id}', [Controller::class, 'updateAbout'])->name('updateAbout');
+Route::get('/postactivity/{id}', [Controller::class, 'getPostActivity'])->name('getPostActivity');
+
 // Social Logins
 Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);
 Route::get('{driver}/callback', [LoginController::class, 'handleProviderCallback']);

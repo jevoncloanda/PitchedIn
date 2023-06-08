@@ -64,7 +64,7 @@
 
             <div class="dropDown-konten-group">
                 <p class="dropDown-konten-bold-p">Account</p>
-                <p class="dropDown-konten-noBold-p">View Profile</p>
+                <p class="dropDown-konten-noBold-p"><a href="{{route('getProfile', ['id' => Auth::user()->id])}}">View Profile</a></p>
                 <p class="dropDown-konten-noBold-p">Settings & Privacy</p>
                 <p class="dropDown-konten-noBold-p">Help</p>
                 <br>
