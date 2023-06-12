@@ -69,7 +69,7 @@
                 <p class="dropDown-konten-noBold-p">Help</p>
                 <br>
                 <p class="dropDown-konten-bold-p">Manage</p>
-                <p class="dropDown-konten-noBold-p">Saved Posts & Activity</p>
+                <p class="dropDown-konten-noBold-p"><a href="{{route('getActivity', ['id' => Auth::user()->id])}}">Saved Posts & Activity</a></p>
                 <p class="dropDown-konten-noBold-p"><a href="{{route('logout')}}">Sign Out</a></p>
             </div>
         </div>

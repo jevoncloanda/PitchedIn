@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/explore.css')}}"/>
+<link rel="stylesheet" href="{{asset('css/responsive/exploreById.css')}}"/>
 @extends('layouts.navbar')
 @section('content')
 <div class="back">
@@ -60,18 +61,23 @@
                 <h2>{{$business->fullname}}</h2>
                 <h3>{{$business->business_name}}</h3>
                 <?php
-                    $post_time = now()->diffInHours($business->created_at);
-                    $post_time_str = $post_time . ' hours';
-                    if($post_time == 0)
-                    {
-                        $post_time = now()->diffInMinutes($business->created_at);
-                        $post_time_str = $post_time . ' minutes';
-                    }
-                    if($post_time == 0)
-                    {
-                        $post_time = now()->diffInSeconds($business->created_at);
-                        $post_time_str = $post_time . ' seconds';
-                    }
+                    $post_time = now()->diffInDays($business->created_at);
+                        $post_time_str = $post_time . ' days';
+                        if($post_time == 0)
+                        {
+                            $post_time = now()->diffInHours($business->created_at);
+                            $post_time_str = $post_time . ' hours';
+                        }
+                        if($post_time == 0)
+                        {
+                            $post_time = now()->diffInMinutes($business->created_at);
+                            $post_time_str = $post_time . ' minutes';
+                        }
+                        if($post_time == 0)
+                        {
+                            $post_time = now()->diffInSeconds($business->created_at);
+                            $post_time_str = $post_time . ' seconds';
+                        }
                 ?>
                 <p>Posted <b>{{$post_time_str}}</b> ago</p>
             </div>

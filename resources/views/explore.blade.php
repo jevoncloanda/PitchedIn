@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/explore.css')}}"/>
+<link rel="stylesheet" href="{{asset('css/responsive/explore.css')}}"/>
 @extends('layouts.navbar')
 @section('content')
 <div class="explore_page2">

@@ -11,6 +11,44 @@
 
 /*NAVBAR*/
 
+header{
+    height:70px;
+    width:100%;
+    position:fixed;
+    z-index:10;
+}
+
+.nav{
+    font-size:16px;
+}
+
+.pp-circle{
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.pp-circle img{
+    height:48.5px;
+    width:48.5px;
+}
+
+#hi-p{
+    font-size:16px;
+}
+
+#name-p{
+    font-size:16px;
+}
+
+#dropDown-circle{
+    height:18px;
+    width:18px;
+    background:white;
+}
+
 
 
 

@@ -54,6 +54,8 @@ Route::get('/search-tips', [TipsController::class, 'searchTips'])->name('searchT
 Route::get('/profile/{id}', [Controller::class, 'getProfile'])->name('getProfile');
 Route::patch('/profile/{id}', [Controller::class, 'updateAbout'])->name('updateAbout');
 Route::get('/postactivity/{id}', [Controller::class, 'getPostActivity'])->name('getPostActivity');
+Route::get('/activity/{id}', [Controller::class, 'getActivity'])->name('getActivity');
+Route::get('/saved/{id}', [Controller::class, 'getSavedPosts'])->name('getSavedPosts');
 
 // Social Logins
 Route::get('redirect/{driver}', [LoginController::class, 'redirectToProvider']);

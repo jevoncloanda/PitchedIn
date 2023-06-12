@@ -56,4 +56,16 @@ class Controller extends BaseController
         $profile = User::find($id);
         return view('postactivity', compact('profile'));
     }
+
+    public function getActivity($id)
+    {
+        $profile = User::find($id);
+        return view('activity', compact('profile'));
+    }
+
+    public function getSavedPosts($id)
+    {
+        $profile = User::find($id);
+        return view('savedposts', compact('profile'));
+    }
 }

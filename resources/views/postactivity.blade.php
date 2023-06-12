@@ -40,7 +40,7 @@
             <div class="user_profile1">
                 <div class="color_circle_pp">
                     <div class="white_circle_pp">
-                        <img src="{{asset('asset/Dummy_Profile_Picture.png')}}"/>
+                        <img src="{{asset('asset/anonymous.png')}}"/>
                     </div>
                     <div class="online_status">
                         <div class="online_green">

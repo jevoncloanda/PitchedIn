@@ -187,7 +187,7 @@
                     </div>
                 </div>
                 <div class="my_post_content_right">
-                    <a href="MyViewProfile.html">
+                    <a href="{{route('getPostActivity', ['id' => $profile->id])}}">
                         <img src="{{asset('asset/right_vp2.png')}}"/>
                     </a>
                 </div>

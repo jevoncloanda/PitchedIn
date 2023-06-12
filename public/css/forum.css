@@ -8,9 +8,18 @@
 }
 
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
 /*NAVBAR*/
 
-/* header{
+header{
     height:70px;
     width:100%;
 }
@@ -44,7 +53,7 @@
     height:18px;
     width:18px;
     background:white;
-} */
+}
 
 /*
 CSS
@@ -56,11 +65,16 @@ body{
 }
 
 .forum_page{
-    padding-top:1rem;
+    padding-top:0.5rem;
     padding-bottom:1rem;
     width:100vw;
     height:85vh;
+
     display:flex;
+    justify-content:center;
+    align-items:center;
+    height:fit-content;
+
 }
 
 .discover{
@@ -81,6 +95,7 @@ body{
     color: #6C9493;
     display:flex;
     flex-wrap:wrap;
+    margin-top:-10px;
 }
 
 .forum_page_left{
@@ -90,6 +105,10 @@ body{
     flex-direction:column;
     align-items:center;
     padding-top:1rem;
+
+    padding-top:1rem;
+
+    height:500px;
 
     /*
     overflow-wrap:break-word;
@@ -111,18 +130,23 @@ body{
     font-weight: 400;
     font-size: 18px;
     line-height: 2.25rem;
+    line-height:25px;
+
     color: #6C9493;
     display:flex;
     flex-wrap:wrap;
+    margin-top:10px;
 }
 
 .forum_page_left_down{
     margin-top:2rem;
+    margin-top:20px;
     width:fit-content;
     height:fit-content;
     width: 429px;
     height: 340px;
 }
+
 
 .forum_page_left_down h3{
     font-family: 'Poppins';
@@ -149,9 +173,14 @@ body{
     line-height: 1.875rem;
     color: #203D3B;
     margin-top:0.5rem;
+    margin-top:15px;
     cursor:pointer;
     border:none;
     outline:none;
+}
+
+.close_forum_page_left{
+    display:none;
 }
 
 .create_forum{
@@ -309,10 +338,15 @@ label img{
 .forum_page_right{
     width:44.95%;
     height:59.375rem;
-    height:100%;
+    /*
+    height:100%;*/
     display:flex;
     flex-direction:column;
     align-items:center;
+
+    height:480px;
+
+    overflow:hidden;
     overflow-y:scroll;
     padding-top:2rem;
 }
@@ -442,4 +476,240 @@ label img{
     height:fit-content;
     display:flex;
     background-color:red;
+}
+
+.circle_add{
+    display:none;
+}
+
+
+.bottom_space{
+    display:none;
+    flex-direction:column;
+    width:55rem;
+    width:429px;
+    height:40px;
+
+    /*
+    height:21.875rem;
+    height:fit-content;
+    max-height:fit-content;
+    */
+}
+
+
+@media(max-width:1020px){
+    .postingan_user, .forum_page_left_down, .create_forum, .forum_page_left_up{
+        width:400px;
+    }
+}
+
+
+@media(max-width:950px){
+    .postingan_user, .forum_page_left_down, .create_forum, .forum_page_left_up{
+        width:300px;
+    }
+}
+
+
+@media(max-width:700px){
+    body{
+        padding-bottom:200px;
+        position:relative;
+        padding-top:0px;
+    }
+    .forum_page{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding-bottom:0px;
+
+        overflow:default;
+        height:fit-content;
+    }
+    .forum_page_left_down{
+        opacity:1;
+        pointer-events:auto;
+        position:absolute;
+        position:fixed;
+
+        left:0;
+        top:0;
+        margin-top:0;
+
+        width:100vw;
+        height:100vh;
+        background: rgba(217, 217, 217, 0.78);
+        z-index:2;
+
+        z-index:5;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+
+        opacity:0;
+        pointer-events:none;
+
+        transition:0.5s;
+    }
+
+    .close_forum_page_left{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:20px;
+        height:20px;
+        background:white;
+        border-radius:100%;
+        border:1.5px solid black;
+        position:absolute;
+        top:10px;
+        right:10px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        cursor:pointer;
+    }
+
+    .forum_left_down_judul{
+        display:none;
+    }
+
+    .forum_page_right{
+        overflow:default;
+        overflow:visible;
+        width:100%;
+        height:fit-content;
+        height:300px;
+    }
+    .line{
+        display:none;
+    }
+
+    .postingan_user{
+        width:429px;
+    }
+
+    .create_forum{
+        position:relative;
+        height:240px;
+        margin-bottom:-58px;
+        width:400px;
+    }
+
+    .numberOfChar{
+        margin-top:7px;
+    }
+
+    .submit_forum{
+        margin-left:275px;
+        z-index:2;
+    }
+
+    .circle_add{
+        width:60px;
+        height:60px;
+        border-radius:100%;
+        background: #6C9493;
+        position:fixed;
+        bottom:10px;
+        right:10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
+        pointer-events:auto;
+    }
+    .horizontal{
+        width:38px;
+        height:7px;
+        background:white;
+        border-radius:20px;
+    }
+    .vertical{
+        width:7px;
+        height:38px;
+        background:white;
+        position:absolute;
+        border-radius:20px;
+    }
+    .bottom_space{
+        display:flex;
+    }
+    .forum_page_left_up{
+        width:429px;
+    }
+}
+
+
+@media(max-width:470px){
+    .postingan_user{
+        width:400px;
+    }
+    .forum_page_left_up{
+        width:400px;
+    }
+}
+
+@media(max-width:450px){
+    .create_forum{
+        position:relative;
+        height:240px;
+        margin-bottom:-57px;
+        width:400px;
+    }
+    .submit_forum{
+        margin-left:275px;
+        z-index:2;
+        margin-top:10px;
+    }
+}
+
+@media(max-width:435px){
+    .postingan_user{
+        width:350px;
+    }
+    .forum_page_left_up{
+        width:350px;
+    }
+}
+
+
+@media(max-width:426px){
+    .create_forum{
+        position:relative;
+        height:240px;
+        margin-bottom:-57px;
+        width:340px;
+    }
+    .submit_forum{
+        margin-left:215px;
+        z-index:2;
+        margin-top:10px;
+    }
+}
+
+@media(max-width:375px){
+    .create_forum{
+        position:relative;
+        height:240px;
+        margin-bottom:-57px;
+        width:300px;
+    }
+    .submit_forum{
+        margin-left:175px;
+        z-index:2;
+        margin-top:10px;
+    }
+    .postingan_user{
+        width:300px;
+    }
+    .forum_page_left_up{
+        width:300px;
+    }
 }

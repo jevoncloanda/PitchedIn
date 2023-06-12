@@ -1,0 +1,463 @@
+@media(max-width:1220px){
+    .saved_post_right{
+        width:850px;
+    }
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:850px;
+    }
+    .content_frame, .content_frame img{
+        width:254px;
+        height:265px;
+    }
+}
+
+@media(max-width:1160px){
+    .saved_post_right{
+        width:790px;
+    }
+
+
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:790px;
+    }
+    .content_frame, .content_frame img{
+        width:234px;
+        height:244px;
+    }
+}
+
+@media(max-width:1100px){
+
+    .saved_post_right{
+        width:730px;
+    }
+
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:730px;
+    }
+    .content_frame, .content_frame img{
+        width:214px;
+        height:222px;
+    }
+}
+
+@media(max-width:1040px){
+
+    .saved_post_right{
+        width:610px;
+    }
+
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:610px;
+    }
+    .content_frame, .content_frame img{
+        width:174px;
+        height:181px;
+    }
+}
+
+
+@media(max-width:940px){
+    .saved_post_right{
+        width:500px;
+    }
+
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:500px;
+    }
+    .content_frame, .content_frame img{
+        width:140px;
+        height:146px;
+    }
+}
+
+@media(max-width:840px){
+
+    .saved_post_right{
+        width:500px;
+    }
+
+    /*CSS FOR EXPLORE LEFT*/
+    .user_profile1{
+        width:250px;
+
+        word-wrap:break-word;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+    .bottom_explore_left{
+        display:none;
+    }
+    .bottom_explore_left_alt{
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+    }
+    .bottom_explore_left_alt ul{
+        overflow-wrap:break-word;
+        width:fit-content;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:500px;
+    }
+    .content_frame, .content_frame img{
+        width:140px;
+        height:146px;
+    }
+}
+
+@media(max-width:790px){
+
+    .saved_post_right{
+        width:400px;
+    }
+
+
+    /*Saved Post 2 Right*/
+    .saved_post2_right{
+        width:400px;
+    }
+    .container_right2_judul h2{
+        font-size:17px;
+    }
+    .garis_judul_page2{
+        height:0.5px;
+    }
+    .remove img{
+        width:18px;
+        height:18px;
+    }
+    .content_frame, .content_frame img{
+        width:99px;
+        height:103px;
+
+        width:107px;
+        height:111px;
+    }
+
+    /*MODAL*/
+    .saved_post2_modal_content{
+        width:636px;
+        height:455px;
+    }
+}
+
+@media(max-width:700px){
+
+    .saved_post2{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .bottom_explore_left_alt{
+        display:none;
+    }
+
+
+    .saved_post_right{
+        width:600px;
+        margin-left:0px;
+        margin-right:0px;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    /*Explore Page Left*/
+    .explore_left{
+        width:600px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+    }
+    .user_profile1{
+        width:600px;
+        height:fit-content;
+        padding-top:10px;
+    }
+
+    .profile_container{
+        display:flex;
+        flex-direction:row;
+        align-items:flex-start;
+    }
+    .user_data{
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:flex-start;
+        justify-content:flex-start;
+        width:480px;
+        margin-top:0px;
+    }
+    .user_data p{
+        text-align:justify;
+    }
+    .quote_investor{
+        margin-top:10px;
+        width:100%;
+        text-align:justify;
+    }
+    .connect_and_chat{
+        margin-top:1rem;
+    }
+    .bottom_explore_left{
+        display:none;
+    }
+    /*
+    .explore_left{
+        width:600px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+    }
+    .user_profile1{
+        width:600px;
+        height:fit-content;
+        padding-top:10px;
+    }
+
+    .profile_container{
+        display:flex;
+        flex-direction:row;
+        align-items:flex-start;
+    }
+    .user_data{
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:flex-start;
+        justify-content:flex-start;
+        width:480px;
+        margin-top:0px;
+
+
+    }
+    .user_data p{
+        text-align:justify;
+    }
+    .quote_investor{
+        margin-top:10px;
+        width:100%;
+        text-align:justify;
+    }
+    .connect_and_chat{
+        margin-top:1rem;
+    }
+    .bottom_explore_left{
+        display:none;
+    }*/
+
+    /*Saved Post2 Right*/
+    .saved_post2_right{
+        width:600px;
+        margin-left:0px;
+        margin-right:0px;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .container_right2_judul{
+        height:fit-content;
+        padding-top:0px;
+        padding-bottom:0px;
+        height:30px;
+    }
+    .remove h2{
+        margin-left:6px;
+    }
+    .garis_judul_page2{
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    .content_frame,.content_frame img{
+        width:166px;
+        height:173px;
+
+        width:172px;
+        height:179px;
+    }
+
+    /*MODAL*/
+    .saved_post2_modal_content{
+        display:none;
+    }
+    .saved_post2_modal_content_alt{
+        display:flex;
+    }
+
+    .message{
+        display:none;
+    }
+
+
+    /*MODAL
+    .saved_post2_modal_content{
+        display:none;
+    }
+    .saved_post2_modal_content_alt{
+        display:flex;
+    }
+
+    .explore_left{
+        display:none;
+    }
+    .saved_post_right{
+        width:600px;
+        margin-left:0px;
+        margin-right:0px;
+    }*/
+}
+
+@media(max-width:640px){
+
+    .saved_post_right{
+        width:500px;
+    }
+
+    /*Explore Left*/
+    .explore_left,.user_profile1{
+        width:500px;
+    }
+    .user_data{
+        width:380px;
+    }
+
+    /*Saved Post2 Right*/
+    .saved_post2_right{
+        width:500px;
+    }
+    .content_frame, .content_frame img{
+        width:140px;
+        height:146px;
+    }
+}
+
+@media(max-width:520px){
+
+    .saved_post_right{
+        width:400px;
+    }
+
+    /*Explore Left*/
+    .explore_left, .user_profile1{
+        width:400px;
+    }
+    .user_data{
+        width:280px;
+    }
+
+    /*Saved Post2 Right*/
+    .saved_post2_right{
+        width:400px;
+    }
+    .container_right2_judul h2{
+        font-size:17px;
+    }
+    .garis_judul_page2{
+        height:1px;
+    }
+    .remove img{
+        width:18px;
+        height:18px;
+    }
+    .content_frame, .content_frame img{
+        width:99px;
+        height:103px;
+
+        width:107px;
+        height:111px;
+    }
+}
+
+@media(max-width:425px){
+    .saved_post_right{
+        width:320px;
+    }
+    .container_right_h2 h2{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        color: #447270;
+    }
+
+
+    /*Explore Left*/
+    .explore_left, .user_profile1{
+        width:300px;
+    }
+    .profile_container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .user_data{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .user_data h3{
+        font-size:17px;
+    }
+    .user_data p{
+        text-align:center;
+        font-size:12px;
+    }
+    .quote_investor{
+        text-align:center;
+        width:260px;
+    }
+
+    /*Saved Post2 Right*/
+    .saved_post2_right{
+        width:300px;
+        padding-top:0.5rem;
+    }
+    .container_right2_judul h2{
+        font-size:12px;
+    }
+    .remove img{
+        width:14px;
+        height:14px;
+    }
+
+    .content_frame, .content_frame img{
+        width:67px;
+        height:70px;
+
+        width:76px;
+        height:79px;
+    }
+    .content_frame{
+        margin-top:5px;
+    }
+
+    /*MODAL ALT*/
+    .saved_post2_modal_content_alt{
+        width:318px;
+        height:409px;
+    }
+    .content_frame_modal_alt{
+        width:318px;
+        height:277px;
+    }
+    .content_frame_modal_alt img{
+        width:318px;
+        height:277px;
+    }
+}
